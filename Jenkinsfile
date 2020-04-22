@@ -73,7 +73,7 @@ pipeline {
 
      
 
-        stage ('Exec Maven') {
+     /*   stage ('Exec Maven') {
 
             steps {
 
@@ -94,7 +94,18 @@ pipeline {
 
             }
 
+     */   }
+    
+    stage (deploy) {
+        
+        steps {
+    
+    "files": [
+        {
+            "pattern":"//var/lib/jenkins/workspace/jfrog-jenkins/target/jpetstore.war",
+            "target":"https://dincric.jfrog.io/artifactory/artifactory-build-info/"
         }
+        ]
 
 
 

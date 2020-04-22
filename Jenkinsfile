@@ -88,6 +88,7 @@ pipeline {
 
      */  
         stage ('deploy') {
+            steps { 
     rtUpload (
     serverId: 'ARTIFACTORY_SERVER',
     specPath: '/var/lib/jenkins/workspace/jfrog-jenkins/target',
@@ -99,6 +100,7 @@ pipeline {
     buildName: 'jfrog-jenkins',
     buildNumber: '11'
 )
+            }
         }
 
 

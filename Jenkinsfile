@@ -79,11 +79,11 @@ pipeline {
 
                 rtMavenRun (
 
-                    tool: maven, // Tool name from Jenkins configuration
+                    tool: maven  // Tool name from Jenkins configuration
 
                     pom: 'jpetstore/pom.xml',
 
-                    goals: './ mvn clean install',
+                    goals: 'clean install',
 
                     deployerId: "MAVEN_DEPLOYER",
 

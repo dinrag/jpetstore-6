@@ -86,7 +86,7 @@ pipeline {
 
                   //  goals:  'clean install',
                     
-                    sh 'mvn test package'
+                    sh './mvnw clean package'
 
                     deployerId: "MAVEN_DEPLOYER",
 

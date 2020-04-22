@@ -27,6 +27,8 @@ pipeline {
                     url: "https://dincric.jfrog.io/artifactory",
 
                    // credentialsId: CREDENTIALS
+                    username: 'admin',
+    password: 'A@runa11'
 
                 )
 

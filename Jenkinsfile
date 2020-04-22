@@ -79,7 +79,10 @@ pipeline {
 
                 rtMavenRun (
 
-                    tool: maven, // Tool name from Jenkins configuration
+                  //  tool: maven, // Tool name from Jenkins configuration
+                    enivironment {
+                        MVEN_HOME = '/opt/mvn/apache-maven-3.6.3'
+                    }
 
                     pom: 'jpetstore-6/pom.xml',
 

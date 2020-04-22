@@ -20,19 +20,19 @@ pipeline {
 
             steps {
 
-                rtServer {
+                rtServer (
 
-                    id: "Artifactory",
+                    id: "ARTIFACTORY_SERVER",
 
                     url: https://dincric.jfrog.io/artifactory,
 
                     credentialsId: CREDENTIALS
 
-                }
+                )
 
 
 
-                rtMavenDeployer {
+                rtMavenDeployer (
 
                     id: "MAVEN_DEPLOYER",
 
@@ -42,11 +42,11 @@ pipeline {
 
                     snapshotRepo: "libs-snapshot-local"
 
-                }
+                )
 
 
 
-                rtMavenResolver {
+                rtMavenResolver (
 
                     id: "MAVEN_RESOLVER",
 
@@ -56,7 +56,7 @@ pipeline {
 
                     snapshotRepo: "libs-snapshot"
 
-                }
+                )
 
             }
 
@@ -68,7 +68,7 @@ pipeline {
 
             steps {
 
-                rtMavenRun {
+                rtMavenRun (
 
                     tool: maven, // Tool name from Jenkins configuration
 
@@ -80,7 +80,7 @@ pipeline {
 
                     resolverId: "MAVEN_RESOLVER"
 
-                }
+                )
 
             }
 
@@ -92,11 +92,11 @@ pipeline {
 
             steps {
 
-                rtPublishBuildInfo {
+                rtPublishBuildInfo (
 
                     serverId: "ARTIFACTORY_SERVER"
 
-                }
+                )
 
             }
 

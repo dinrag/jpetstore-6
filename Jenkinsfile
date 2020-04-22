@@ -79,7 +79,7 @@ pipeline {
 
                 rtMavenRun (
 
-                    tool: maven, 
+                    tool: 'maven', 
                    
 
                     pom: 'jpetstore-6/pom.xml',

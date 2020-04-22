@@ -24,7 +24,7 @@ pipeline {
 
                     id: "ARTIFACTORY_SERVER",
 
-                    url: https://dincric.jfrog.io/artifactory,
+                    url: "https://dincric.jfrog.io/artifactory",
 
                     credentialsId: CREDENTIALS
 

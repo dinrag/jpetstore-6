@@ -26,7 +26,7 @@ pipeline {
 
                     url: "https://dincric.jfrog.io/artifactory",
 
-                    credentialsId: CREDENTIALS
+                   // credentialsId: CREDENTIALS
 
                 )
 

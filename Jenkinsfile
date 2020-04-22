@@ -66,7 +66,7 @@ pipeline {
 
 
 
-        stage ('Exec Maven') {
+   /*     stage ('Exec Maven') {
 
             steps {
 
@@ -86,6 +86,19 @@ pipeline {
 
             }
 
+     */  
+        stage ('deploy') {
+    rtUpload (
+    serverId: 'ARTIFACTORY_SERVER',
+    specPath: '/var/lib/jenkins/workspace/jfrog-jenkins/target',
+    failNoOp: true,
+ 
+    // Optional - Associate the uploaded files with the following custom build name and build number.
+    // If not set, the files will be associated with the default build name and build number (i.e the 
+    // the Jenkins job name and number).
+    buildName: 'jfrog-jenkins',
+    buildNumber: '11'
+)
         }
 
 

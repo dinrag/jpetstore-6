@@ -106,6 +106,8 @@ pipeline {
             "target":"https://dincric.jfrog.io/artifactory/artifactory-build-info/"
         }
         ]
+        }
+    }
 
 
 

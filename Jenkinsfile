@@ -96,48 +96,12 @@ pipeline {
 
      
 
-     / * stage ('Exec Maven') {
-
-            steps {
-
-                rtMavenRun (
-
-                    tool:'maven', 
-                   
-
-                  pom: 'jfrog-jenkins/pom.xml',
-
-                   goals:  'clean install',
-                    
-                  
-
-                    deployerId: "MAVEN_DEPLOYER",
-
-                    resolverId: "MAVEN_RESOLVER"
-
-                )
-
-            }
-
-    */   }
+    
     
  
 
 
 
-     /*   stage ('Publish build info') {
-
-            steps {
-
-                rtPublishBuildInfo (
-
-                    serverId: "ARTIFACTORY_SERVER"
-
-                )
-
-            }
-
-      */  }
         
        
 

@@ -81,7 +81,7 @@ pipeline {
 
                     tool: maven, // Tool name from Jenkins configuration
 
-                    pom: 'jpetstore/pom.xml',
+                    pom: 'jpetstore-6/pom.xml',
 
                     goals: 'clean install',
 

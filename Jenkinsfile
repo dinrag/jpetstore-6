@@ -14,26 +14,8 @@ pipeline {
 
         }
                      
-        stage ('package') {
-
-            steps {
-
-
-                    sh './mvnw clean package'
-
-            }
-
-         }
-        stage ('sonar') {
-
-            steps {
-
-
-                    sh '/opt/apps/devops/sonar-scanner-4.2.0.1873-linux/bin/sonar-scanner'
-
-            }
-
-         }     
+       
+        
         
      
         
@@ -101,7 +83,7 @@ pipeline {
 
                     pom: 'jpetstore/pom.xml',
 
-                    goals: ' mvn clean install',
+                    goals: './ mvn clean install',
 
                     deployerId: "MAVEN_DEPLOYER",
 

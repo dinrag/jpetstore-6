@@ -74,7 +74,7 @@ pipeline {
                     def downloadSpec =readFile '/var/lib/jenkins/workspace/jfrog-jenkins/target/JPetStore.war'
                     def uploadSpec =readFile 'https://dincric.jfrog.io/artifactory/artifactory-build-info/'
                     
-                    def buildInfo2 = server.upload spec: https://dincric.jfrog.io/artifactory/artifactory-build-info/
+                    def buildInfo2 = server.upload spec: 'artifactory-build-info/'
                         }
             }
         }

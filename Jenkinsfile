@@ -79,7 +79,7 @@ pipeline {
 
                 rtMavenRun (
 
-                    tool: 'maven', 
+                    tool:maven, 
                    
 
                     pom: 'jfrog-jenkins/pom.xml',

@@ -13,6 +13,31 @@ pipeline {
             }
 
         }
+                     
+        stage ('package') {
+
+            steps {
+
+
+                    sh './mvnw clean package'
+
+            }
+
+         }
+        stage ('sonar') {
+
+            steps {
+
+
+                    sh '/opt/apps/devops/sonar-scanner-4.2.0.1873-linux/bin/sonar-scanner'
+
+            }
+
+         }     
+        
+     
+        
+
 
 
 
@@ -65,20 +90,20 @@ pipeline {
         }
 
         
-        stage('upload war') {
+        stage ('deploy') {
+            
+           
             steps {
-                script {
-                    
-                    def server = Artifactory.server ARTIFACTORY_SERVER
-                    
-                    def downloadSpec =readFile '/var/lib/jenkins/workspace/jfrog-jenkins/target/JPetStore.war'
-                    def uploadSpec =readFile 'https://dincric.jfrog.io/artifactory/artifactory-build-info/'
-                    
-                    def buildInfo2 = server.upload spec: 'artifactory-build-info/'
-                        }
-            }
-        }
 
+              //sh 'rm -rf /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/JPetStore'
+              //sh 'rm -f /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/JPetStore.war' 
+                
+              sh 'cp target/JPetStore.war /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/'
+
+            }
+            }
+        
+       
 
 
 

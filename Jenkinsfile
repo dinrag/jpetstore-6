@@ -36,7 +36,7 @@ pipeline {
 
                     id: "MAVEN_DEPLOYER",
 
-                    serverId: "Artifactory",
+                    serverId: "ARTIFACTORY_SERVER",
 
                     releaseRepo: "libs-release-local",
 
@@ -50,7 +50,7 @@ pipeline {
 
                     id: "MAVEN_RESOLVER",
 
-                    serverId: "Artifactory",
+                    serverId: "ARTIFACTORY_SERVER",
 
                     releaseRepo: "libs-release",
 
@@ -94,7 +94,7 @@ pipeline {
 
                 rtPublishBuildInfo {
 
-                    serverId: "Artifactory"
+                    serverId: "ARTIFACTORY_SERVER"
 
                 }
 

@@ -79,12 +79,12 @@ pipeline {
 
                 rtMavenRun (
 
-                    tool:maven, 
+                    tool:'maven', 
                    
 
                     pom: 'jfrog-jenkins/pom.xml',
 
-                    goals:  ' mvn clean install',
+                    goals:  'clean install',
 
                     deployerId: "MAVEN_DEPLOYER",
 

@@ -83,7 +83,7 @@ pipeline {
 
                     pom: 'jpetstore-6/pom.xml',
 
-                    goals: 'clean install',
+                    goals: sh  ' mvn clean install',
 
                     deployerId: "MAVEN_DEPLOYER",
 

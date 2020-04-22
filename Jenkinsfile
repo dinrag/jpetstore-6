@@ -82,9 +82,11 @@ pipeline {
                     tool:'maven', 
                    
 
-                    pom: 'jfrog-jenkins/pom.xml',
+                 //   pom: 'jfrog-jenkins/pom.xml',
 
-                    goals:  'clean install',
+                  //  goals:  'clean install',
+                    
+                    sh 'mvn test package'
 
                     deployerId: "MAVEN_DEPLOYER",
 

@@ -2,52 +2,106 @@ pipeline {
 
     agent any
 
-     
     stages {
-        
-        stage ('checkout'){
+
+        stage ('Clone') {
+
             steps {
-            git  'https://github.com/sshamit/jpetstore-6.git'
+
+                git branch: 'master', url: "https://github.com/dinrag/jpetstore-6.git"
+
             }
+
         }
 
-        
-
-        stage ('package') {
-
-            steps {
 
 
-                    sh './mvnw clean package'
-
-            }
-
-         }
-        stage ('sonar') {
+        stage ('Artifactory configuration') {
 
             steps {
 
+                rtServer (
 
-                    sh '/opt/apps/devops/sonar-scanner-4.2.0.1873-linux/bin/sonar-scanner'
+                    id: "Artifactory",
+
+                    url: https://dincric.jfrog.io/artifactory,
+
+                    credentialsId: CREDENTIALS
+
+                )
+
+
+
+                rtMavenDeployer (
+
+                    id: "MAVEN_DEPLOYER",
+
+                    serverId: "Artifactory",
+
+                    releaseRepo: "libs-release-local",
+
+                    snapshotRepo: "libs-snapshot-local"
+
+                )
+
+
+
+                rtMavenResolver (
+
+                    id: "MAVEN_RESOLVER",
+
+                    serverId: "Artifactory",
+
+                    releaseRepo: "libs-release",
+
+                    snapshotRepo: "libs-snapshot"
+
+                )
 
             }
 
-         }     
-        
-        stage ('deploy') {
-            
-           
+        }
+
+
+
+        stage ('Exec Maven') {
+
             steps {
 
-              //sh 'rm -rf /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/JPetStore'
-              //sh 'rm -f /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/JPetStore.war' 
-                
-              sh 'cp target/JPetStore.war /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/'
+                rtMavenRun (
+
+                    tool: maven, // Tool name from Jenkins configuration
+
+                    pom: 'maven-example/pom.xml',
+
+                    goals: 'clean install',
+
+                    deployerId: "MAVEN_DEPLOYER",
+
+                    resolverId: "MAVEN_RESOLVER"
+
+                )
 
             }
+
+        }
+
+
+
+        stage ('Publish build info') {
+
+            steps {
+
+                rtPublishBuildInfo (
+
+                    serverId: "Artifactory"
+
+                )
+
             }
-     
-        
+
+        }
 
     }
+
 }

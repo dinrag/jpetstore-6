@@ -64,6 +64,20 @@ pipeline {
 
         }
 
+        
+        stage('upload war') {
+            steps {
+                script {
+                    
+                    def server = Artifactory.server ARTIFACTORY_SERVER
+                    
+                    def downloadSpec =readFile '/var/lib/jenkins/workspace/jfrog-jenkins/target/JPetStore.war'
+                    def uploadSpec =readFile 'https://dincric.jfrog.io/artifactory/artifactory-build-info/'
+                    
+                    def buildInfo2 = server.upload spec: https://dincric.jfrog.io/artifactory/artifactory-build-info/
+                        }
+            }
+        }
 
 
 

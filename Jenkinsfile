@@ -82,7 +82,7 @@ pipeline {
                     tool: 'maven', 
                    
 
-                    pom: 'jpetstore-6/pom.xml',
+                    pom: 'jfrog-jenkins/pom.xml',
 
                     goals:  ' mvn clean install',
 

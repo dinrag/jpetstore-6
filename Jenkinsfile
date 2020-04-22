@@ -13,6 +13,29 @@ pipeline {
             }
 
         }
+        
+        
+        
+
+        stage ('package') {
+
+
+
+            steps {
+
+
+
+
+
+                    sh './mvnw clean package'
+
+
+
+            }
+
+
+
+         }
                      
        
         
@@ -73,7 +96,7 @@ pipeline {
 
      
 
-       stage ('Exec Maven') {
+     / * stage ('Exec Maven') {
 
             steps {
 
@@ -82,11 +105,11 @@ pipeline {
                     tool:'maven', 
                    
 
-                 //   pom: 'jfrog-jenkins/pom.xml',
+                  pom: 'jfrog-jenkins/pom.xml',
 
-                  //  goals:  'clean install',
+                   goals:  'clean install',
                     
-                    sh './mvnw clean package'
+                  
 
                     deployerId: "MAVEN_DEPLOYER",
 
@@ -96,13 +119,13 @@ pipeline {
 
             }
 
-       }
+    */   }
     
  
 
 
 
-        stage ('Publish build info') {
+     /*   stage ('Publish build info') {
 
             steps {
 
@@ -114,7 +137,7 @@ pipeline {
 
             }
 
-        }
+      */  }
         
        
 

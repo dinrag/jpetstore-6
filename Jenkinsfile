@@ -66,58 +66,9 @@ pipeline {
 
 
 
-   /*     stage ('Exec Maven') {
-
-            steps {
-
-                rtMavenRun (
-
-                    tool: maven, // Tool name from Jenkins configuration
-
-                   pom: 'jpetstore-6/pom.xml',
-
-                    goals: 'clean install package',
-
-                    deployerId: "MAVEN_DEPLOYER",
-
-                    resolverId: "MAVEN_RESOLVER"
-
-                )
-
-            }
-
-     */  
-        stage ('deploy') {
-            steps { 
-    rtUpload (
-    serverId: 'ARTIFACTORY_SERVER',
-    specPath: '/var/lib/jenkins/workspace/jfrog-jenkins/target',
-    failNoOp: true,
- 
-    // Optional - Associate the uploaded files with the following custom build name and build number.
-    // If not set, the files will be associated with the default build name and build number (i.e the 
-    // the Jenkins job name and number).
-    buildName: 'jfrog-jenkins',
-    buildNumber: '11'
-)
-            }
-        }
 
 
-
-        stage ('Publish build info') {
-
-            steps {
-
-                rtPublishBuildInfo (
-
-                    serverId: "ARTIFACTORY_SERVER"
-
-                )
-
-            }
-
-        }
+     
 
     }
 

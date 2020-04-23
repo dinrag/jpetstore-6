@@ -13,38 +13,9 @@ pipeline {
             }
 
         }
-        
-        
-        
-
-        stage ('package') {
-
-
-
-            steps {
-
-
-
-
-
-                    sh './mvnw clean package'
-
-
-
-            }
-
-
-
-         }
+      
                      
-       
-        
-        
      
-        
-
-
-
 
         stage ('Artifactory configuration') {
 
@@ -94,7 +65,17 @@ pipeline {
 
         }
 
-     
+        stage('exec maven') {
+            steps {
+                rtMavenRun (
+                    tool: M3,
+                    goals: 'clean install',
+                    deployerId: "MAVEN_DEPLOYER",
+                    resolverId: "MAVEN_RESOLVER"
+                    )
+            }
+        }
+        
 
     
     

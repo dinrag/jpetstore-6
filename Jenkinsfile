@@ -70,15 +70,20 @@ pipeline {
                 rtMavenRun (
                     tool: 'maven',
                      pom: 'pom.xml',
-                    goals: 'clean install',
+                    goals: 'clean install package',
                     deployerId: "MAVEN_DEPLOYER",
                     resolverId: "MAVEN_RESOLVER"
                     )
             }
         }
         
-
-    
+        stage('publish build info') {
+        steps {
+            rtPublishBuildInfo  (
+                  serverId:  "ARTIFACTORY_SERVER"
+                )
+        }
+        }
     
  
 

@@ -4,7 +4,7 @@ pipeline {
 
     stages {
 
-        stage ('Clone') {
+     /*   stage ('Clone') {
 
             steps {
 
@@ -12,7 +12,7 @@ pipeline {
 
             }
 
-        }
+      */  }
       
                      
      
@@ -27,9 +27,9 @@ pipeline {
 
                     url: "https://dincric.jfrog.io/artifactory",
 
-                   // credentialsId: CREDENTIALS
-                    username: 'admin',
-    password: 'A@runa11'
+                    credentialsId: 'jfrog'
+                //    username: 'admin',
+ //   password: 'A@runa11''
 
                 )
 
@@ -65,7 +65,7 @@ pipeline {
 
         }
 
-        stage('exec maven') {
+        stage('package') {
             steps {
                 rtMavenRun (
                     tool: 'maven',
@@ -77,13 +77,13 @@ pipeline {
             }
         }
         
-        stage('publish build info') {
+      /*  stage('publish build info') {
         steps {
             rtPublishBuildInfo  (
                   serverId:  "ARTIFACTORY_SERVER"
                 )
         }
-        }
+       */ }
     
  
 

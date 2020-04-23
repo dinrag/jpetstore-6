@@ -4,16 +4,7 @@ pipeline {
 
     stages {
 
-     /*   stage ('Clone') {
-
-            steps {
-
-                git branch: 'master', url: "https://github.com/dinrag/jpetstore-6.git"
-
-            }
-
-      */  }
-      
+    
                      
      
 

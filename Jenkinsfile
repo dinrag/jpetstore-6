@@ -71,13 +71,7 @@ pipeline {
      
        
 
-        stage ('publish build info') {
-            steps{
-                rtPublishBuildInfo (
-                    serverId: "ARTIFACTORY_SERVER"
-                    )
-            }
-        }
+       
 
         
          stage('deploy') {

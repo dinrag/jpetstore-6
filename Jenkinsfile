@@ -25,8 +25,7 @@ pipeline {
                     url: "https://dincric.jfrog.io/artifactory",
 
                     credentialsId: 'jfrog'
-                //    username: 'admin',
- //   password: 'A@runa11''
+                
 
                 )
 
@@ -62,7 +61,7 @@ pipeline {
 
         }
 
-        stage('package') {
+        stage('build and package') {
             steps {
                 rtMavenRun (
                     tool: 'maven',

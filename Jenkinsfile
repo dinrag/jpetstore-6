@@ -85,7 +85,6 @@ pipeline {
            
            rtDownload (
             id: "ARTIFACTORY_SERVER",
-
                     url: "https://dincric.jfrog.io/artifactory",
            sh 'cp libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/ /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/',
                )

@@ -78,7 +78,7 @@ pipeline {
             steps {
                 rtDownload (
                      
-                   serverId: ARTIFACTORY_SERVER,
+                   serverId: "ARTIFACTORY_SERVER",
            
                     specPath: '/home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/'
                     )

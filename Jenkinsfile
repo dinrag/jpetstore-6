@@ -4,7 +4,13 @@ pipeline {
 
     stages {
 
-    
+      
+        stage ('checkout'){
+            steps {
+            git  'https://github.com/sshamit/jpetstore-6.git'
+            }
+        }
+
                      
      
 

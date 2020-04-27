@@ -73,6 +73,19 @@ pipeline {
             }
         }
         
+        
+         stage('download') {
+            steps {
+                rtDownload (
+                     
+                   serverId: ARTIFACTORY_SERVER,
+           
+                    specPath: '/home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/'
+                    )
+            }
+         }
+        
+        
          
                        
 
@@ -80,15 +93,15 @@ pipeline {
        
 
         
-         stage('deploy') {
-       steps {
+       //  stage('deploy') {
+       //steps {
            
-           script {
-           sh 'libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/ /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/',
-               }
-        }
+         //  script {
+           //sh 'libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/ /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/',
+             //  }
+        //}
                
-        }
+        //}
 
 
 

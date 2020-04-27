@@ -73,19 +73,32 @@ pipeline {
             }
         }
         
-     
+         stage('build and package') {
+            steps {
+                rtDownload (
+                    serverId: "ARTIFACTORY_SERVER",
+                    spec:'''{
+                        "files":  [
+                        {
+                            "pattern": "libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/",
+                            "target" : "/home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/",
+                            }
+                            ]
+                            }''',
+                    }
+                    }
                        
 
 
        
 
         
-         stage('deploy') {
-        steps {
+      //   stage('deploy') {
+     //   steps {
             
-           sh 'cp target/libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/ /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/'
-        }
-        }
+        //   sh 'cp target/libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/ /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/'
+      //  }
+     //   }
 
 
 

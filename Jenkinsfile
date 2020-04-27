@@ -73,35 +73,25 @@ pipeline {
             }
         }
         
-         stage('download') {
-            steps {
-               rtDownload (
-    serverId: "ARTIFACTORY_SERVER",
-    spec: """{
-          "files": [
-            {
-              "pattern": "libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/",
-              "target": "/home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/",
-            }
-          ]
-    }""",
-                   
-                   )
-                
-                   }
-                   }
+         
                        
 
 
        
 
         
-      //   stage('deploy') {
-     //   steps {
-            
-        //   sh 'cp target/libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/ /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/'
-      //  }
-     //   }
+         stage('deploy') {
+       steps {
+           
+           rtDownload (
+            id: "ARTIFACTORY_SERVER",
+
+                    url: "https://dincric.jfrog.io/artifactory",
+           sh 'cp libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/ /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/'
+               )
+        }
+               
+        }
 
 
 

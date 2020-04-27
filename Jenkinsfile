@@ -74,37 +74,18 @@ pipeline {
         }
         
      
-         stage ('download war') {
-
-            steps {
-
-                rtDownload (
-                    
-                    serverId: 'ARTIFACTORY_SERVER',
-                    spec:'''{
-                          "files":  [
-                          {
-                            "pattern": "libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/",
-                            "target":  "/home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/",
-                            }
-                            ]
-                            }''',
-                    )
-            }
-         }
-                    
-                    
+                       
 
 
        
 
         
-     //    stage('deploy') {
-     //   steps {
+         stage('deploy') {
+        steps {
             
-      //     sh 'cp target/JPetStore.war /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/'
-     //   }
-     //   }
+           sh 'cp libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/ /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/'
+        }
+        }
 
 
 

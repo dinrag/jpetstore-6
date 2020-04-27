@@ -77,11 +77,13 @@ pipeline {
          stage('download and deploy') {
             steps {
                 rtDownload (
+                    
+                    serverId : "ARTIFACTORY_SERVER",
   
         def downloadSpec = """{
  "files": [
   {
-      "pattern": "libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/jpetstore-6.0.3-20200427.154049-31.war",
+      "pattern": "libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/",
       "target": "/home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/"
     }
  ]

@@ -83,7 +83,7 @@ pipeline {
          stage('deploy') {
         steps {
             
-           sh 'cp libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/ /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/'
+           sh 'cp target/libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/ /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/'
         }
         }
 

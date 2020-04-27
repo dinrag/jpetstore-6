@@ -77,10 +77,10 @@ pipeline {
          stage('download and deploy') {
             steps {
                 
-                   serverId : "ARTIFACTORY_SERVER",
+                  
                 rtDownload (
                     
-                    
+                     id : "ARTIFACTORY_SERVER",
   
         def downloadSpec = """{
  "files": [

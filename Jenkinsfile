@@ -88,7 +88,7 @@ pipeline {
            
            script {
                
-           sh ' cp target/JPetStore.war  /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/'
+           sh ' cp https://dincric.jfrog.io/artifactory/libs-snapshot-local/  /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/'
                }
         }
                

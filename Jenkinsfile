@@ -87,7 +87,7 @@ pipeline {
        steps {
            
            script {
-               serverId: "ARTIFACTORY_SERVER",
+               
            sh ' cp target/libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/ /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/',
                }
         }

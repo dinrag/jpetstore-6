@@ -80,7 +80,7 @@ pipeline {
                   
                 rtDownload (
                     
-                     id : "ARTIFACTORY_SERVER",
+                    serverId : "ARTIFACTORY_SERVER",
   
         def downloadSpec = """{
  "files": [
@@ -89,7 +89,7 @@ pipeline {
       "target": "/home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/"
     }
  ]
-}""",
+}"""
                     )
             }
          }

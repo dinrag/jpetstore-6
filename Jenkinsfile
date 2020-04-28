@@ -86,7 +86,7 @@ pipeline {
               "target": "/home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/",
             }
           ]
-    }""",
+    }"""
                 )
         }
     }

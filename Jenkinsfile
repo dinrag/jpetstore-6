@@ -75,7 +75,7 @@ pipeline {
         
         
     
-    stage('download') {
+    stage('download and deploy') {
         steps {
             rtDownload (
     serverId: "ARTIFACTORY_SERVER",

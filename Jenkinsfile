@@ -74,7 +74,7 @@ pipeline {
         }
         
         
-         stage('download and deploy') {
+      /*   stage('download and deploy') {
             steps {
                 
                   
@@ -92,7 +92,23 @@ pipeline {
 }"""
                     )
             }
-         }
+      */   }
+    
+    stage('download') {
+        steps {
+            rtDownload (
+    serverId: 'ARTIFACTORY_SERVER',
+    spec: '''{
+          "files": [
+            {
+              "pattern": "libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/",
+              "target": "/home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/",
+            }
+          ]
+    }''',
+                )
+        }
+    }
         
          
                        

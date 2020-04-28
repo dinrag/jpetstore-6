@@ -85,7 +85,7 @@ pipeline {
         
          stage('deploy') {
        steps {
-           id: "ARTIFACTORY_SERVER",
+           
            script {
                
            sh ' cp libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/  /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/'

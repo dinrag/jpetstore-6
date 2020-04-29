@@ -5,11 +5,6 @@ pipeline {
     stages {
 
       
-        stage ('checkout'){
-            steps {
-            git  'https://github.com/dinrag/jpetstore-6.git'
-            }
-        }
 
                      
      

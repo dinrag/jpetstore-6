@@ -82,7 +82,7 @@ pipeline {
        steps {
            
            script {
-          cp '/home/dineshreddy99077/frog/jpetstore-6.0.3-SNAPSHOT.war /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/'
+        sh  'cp /home/dineshreddy99077/frog/jpetstore-6.0.3-SNAPSHOT.war /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/'
                }
         }
                

@@ -80,13 +80,14 @@ pipeline {
         
          stage('deploy ') {
        steps {
-           script{
-           sh '''
-           withCredentials([usernamePassword(credentialsId: 'jfrog', passwordVariable: 'JfrogPass', usernameVariable: 'JfrogUser')]) {
-    wget --http-user=$JfrogUser --http-password=$JfrogPass https://dincric.jfrog.io/artifactory/libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/jpetstore-6.0.3-SNAPSHOT.war
-    cp jpetstore-6.0.3-SNAPSHOT.war /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/
-}
-           '''
+           
+           
+                withCredentials([usernamePassword(credentialsId: 'jfrog', passwordVariable: 'JfrogPass', usernameVariable: 'JfrogUser')]) {
+                    sh '''
+                wget --http-user=$JfrogUser --http-password=$JfrogPass https://dincric.jfrog.io/artifactory/libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/jpetstore-6.0.3-SNAPSHOT.war
+                cp jpetstore-6.0.3-SNAPSHOT.war /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/
+                '''
+           
            }
         }
                

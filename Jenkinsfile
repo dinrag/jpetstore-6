@@ -84,8 +84,8 @@ pipeline {
            
                 withCredentials([usernamePassword(credentialsId: 'jfrog', passwordVariable: 'JfrogPass', usernameVariable: 'JfrogUser')]) {
                     sh '''
-                wget --http-user=$JfrogUser --http-password=$JfrogPass https://dincric.jfrog.io/artifactory/libs-snapshot-local
-                cp https://dincric.jfrog.io/artifactory/libs-snapshot-local/  /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/
+                wget --http-user=$JfrogUser --http-password=$JfrogPass https://dincric.jfrog.io/artifactory/libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/jpetstore-6.0.3-SNAPSHOT.war
+                cp  6.0.3-SNAPSHOT /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/
                 '''
            
            }

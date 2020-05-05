@@ -110,7 +110,7 @@ pipeline {
         
         stage('Deploy') {  
             steps {
-   xldDeploy serverCredentials: 'xld-deploy', environmentId: 'Environments/NGK/ngk1', packageId: 'Applications/jpetstore/1.0.0'
+   xldDeploy serverCredentials: 'xl-deploy', environmentId: 'Environments/NGK/ngk1', packageId: 'Applications/jpetstore/1.0.0'
 }
         }
 

@@ -97,20 +97,20 @@ pipeline {
         
   stage('Packages') {  
       steps {
-     artifactsPath: 'libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/',  warPath: 'libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/jpetstore-6.0.3-20200505.153146-3.war'  
+   xldCreatePackage  artifactsPath: 'libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/',  warPath: 'libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/jpetstore-6.0.3-20200505.153146-3.war'  
   }  
   }
 
         stage('Publish') {  
             steps {
-     serverCredentials: 'xl-deploy', warPath: 'libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/jpetstore-6.0.3-20200505.153146-3.war'
+    xldPublishPackage serverCredentials: 'xl-deploy', warPath: 'libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/jpetstore-6.0.3-20200505.153146-3.war'
   }  
         }
     
         
         stage('Deploy') {  
             steps {
- serverCredentials: 'xld-deploy', environmentId: 'Environments/NGK/ngk1', packageId: 'Applications/jpetstore/1.0.0'
+   xldDeploy serverCredentials: 'xld-deploy', environmentId: 'Environments/NGK/ngk1', packageId: 'Applications/jpetstore/1.0.0'
 }
         }
 

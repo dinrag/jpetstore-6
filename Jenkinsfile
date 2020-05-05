@@ -17,7 +17,7 @@ pipeline {
 
                     id: "ARTIFACTORY_SERVER",
 
-                    url: "https://dincric.jfrog.io/artifactory",
+                    url: "https://sakthishivani.jfrog.io/artifactory",
 
                     credentialsId: 'jfrog'
                 
@@ -84,7 +84,7 @@ pipeline {
            
                 withCredentials([usernamePassword(credentialsId: 'jfrog', passwordVariable: 'JfrogPass', usernameVariable: 'JfrogUser')]) {
                     sh ''' 
-                wget --http-user=$JfrogUser --http-password=$JfrogPass  https://dincric.jfrog.io/artifactory/libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/jpetstore-6.0.3-SNAPSHOT.war
+                wget --http-user=$JfrogUser --http-password=$JfrogPass  https://sakthishivani.jfrog.io/artifactory/libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/jpetstore-6.0.3-SNAPSHOT.war
                 cp  jpetstore-6.0.3-SNAPSHOT.war /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/
                 '''
            

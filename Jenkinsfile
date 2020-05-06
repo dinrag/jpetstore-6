@@ -5,12 +5,12 @@ pipeline {
         
          stage('Package') { 
              steps {
-    xldCreatePackage artifactsPath: 'libs-snapshot-local/',  warPath: 'libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/jpetstore-6.0.3-20200506.042637-9.war'  
+    xldCreatePackage artifactsPath: 'libs-snapshot-local/',  darPath: 'libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/jpetstore-6.0.3-20200506.042637-9.war'  
   }  
          }
   stage('Publish') { 
       steps {
-    xldPublishPackage serverCredentials: 'xl-deploy', warPath: 'libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/jpetstore-6.0.3-20200506.042637-9.war'
+    xldPublishPackage serverCredentials: 'xl-deploy', darPath: 'libs-snapshot-local/org/mybatis/jpetstore/6.0.3-SNAPSHOT/jpetstore-6.0.3-20200506.042637-9.war'
   }  
   }
   stage('Deploy') { 

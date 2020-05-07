@@ -7,7 +7,7 @@ pipeline {
        
       stage('Package') {  
           steps{
-    xldCreatePackage artifactsPath: 'libs-snapshot-local/',manifestPath: 'deployit-manifest.xml', darPath: 'jpetstore-1.0.3.dar'  
+    xldCreatePackage artifactsPath: 'libs-snapshot-local/', darPath: 'jpetstore-1.0.3.dar'  
   } 
       }
   stage('Publish') {  

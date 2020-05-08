@@ -21,7 +21,7 @@ pipeline {
   }
   stage('Deploy') {  
       steps{
-    xldDeploy serverCredentials: 'dinesh', environmentId: 'Environments/NGK/ngk1', packageId: 'Applications/jpetstore/1.1.0'
+    xldDeploy serverCredentials: 'dinesh', environmentId: 'Environments/DINDEV/dinesh', packageId: 'Applications/jpetstore/1.1.0'
   }  
   }
      

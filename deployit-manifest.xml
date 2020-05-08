@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<udm.DeploymentPackage version="1.0.9" application="jpetstore">
+  <application />
+  <orchestrator />
+  <deployables>
+    <tomcat.War name="JPetStore.war" file="JPetStore.war">
+      <tags>
+        <value>JPetStore</value>
+      </tags>
+      <scanPlaceholders>true</scanPlaceholders>
+      <preScannedPlaceholders>true</preScannedPlaceholders>
+      <placeholders>
+        <value>first_placeholder</value>
+      </placeholders>
+      <checksum>6d87f7f9a934d6805e13a5955312ecd9350c893b6f623f78715cf2a1ebca6b14</checksum>
+      <credentials ref="Configuration/localhost" />
+      <contextRoot>JPetStore</contextRoot>
+    </tomcat.War>
+  </deployables>
+  <applicationDependencies />
+  <dependencyResolution>LATEST</dependencyResolution>
+  <undeployDependencies>false</undeployDependencies>
+  <templates />
+  <boundTemplates />
+</udm.DeploymentPackage>

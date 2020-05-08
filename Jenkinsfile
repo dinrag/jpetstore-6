@@ -11,12 +11,12 @@ pipeline {
        
       stage('Package') {  
           steps{
-    xldCreatePackage artifactsPath: 'target/', manifestPath: 'deployit-manifest.xml', darPath: 'jpetstore-1.0.3.dar'  
+    xldCreatePackage artifactsPath: 'target/', manifestPath: 'deployit-manifest.xml', darPath: 'jpetstore-1.0.9.dar'  
   } 
       }
   stage('Publish') {  
       steps{
-    xldPublishPackage serverCredentials: 'xl-deploy', darPath: 'jpetstore-1.0.3.dar'
+    xldPublishPackage serverCredentials: 'xl-deploy', darPath: 'jpetstore-1.0.9.dar'
   }  
   }
   stage('Deploy') {  

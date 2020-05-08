@@ -16,12 +16,12 @@ pipeline {
       }
   stage('Publish') {  
       steps{
-    xldPublishPackage serverCredentials: 'xl', darPath: 'jpetstore-1.1.0.dar'
+    xldPublishPackage serverCredentials: 'sakthi', darPath: 'jpetstore-1.1.0.dar'
   }  
   }
   stage('Deploy') {  
       steps{
-    xldDeploy serverCredentials: 'xl', environmentId: 'Environments/NGK/ngk1', packageId: 'Applications/jpetstore/1.1.0.'
+    xldDeploy serverCredentials: 'sakthi', environmentId: 'Environments/NGK/ngk1', packageId: 'Applications/jpetstore/1.1.0.'
   }  
   }
      
